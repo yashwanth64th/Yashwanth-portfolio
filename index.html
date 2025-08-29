@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yashwanth M - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+      color: #333;
+      padding: 20px;
+    }
+
+    /* Profile Box */
+    .profile-box {
+      width: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    .profile-box h2 {
+      margin-bottom: 15px;
+      color: #0a66c2;
+    }
+    .profile-box button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .profile-box button:hover { background-color: darkred; }
+
+    /* Portfolio Header */
+    header {
+      text-align: center;
+      padding: 30px;
+      background: #0a66c2;
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 { font-size: 36px; }
+    header h2 { font-weight: normal; margin-top: 10px; font-size: 20px; }
+
+    /* Main Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0a66c2;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #0a66c2;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    img {
+      width: 180px;
+      border-radius: 50%;
+      margin: 15px 0;
+      border: 3px solid #0a66c2;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Education Table */
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    table, th, td { border: 1px solid #ddd; }
+    th, td { padding: 12px; text-align: center; }
+    th { background: #0a66c2; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+
+    /* Skills */
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 15px 0;
+      padding: 0;
+    }
+    ul li {
+      background: #e3f2fd;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    ul li:hover { background: #0a66c2; color: white; transform: scale(1.05); }
+
+    /* Links */
+    a { color: #0a66c2; font-weight: bold; transition: 0.3s; }
+    a:hover { color: darkred; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 15px;
+      background: #0a66c2;
+      color: white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Box -->
+  <div class="profile-box">
+    <h2>Welcome, <span id="profileUsername">Yashwanth M</span></h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Portfolio Header -->
+  <header>
+    <h1>Yashwanth M</h1>
+    <h2>BCA Student | Aspiring Web Developer</h2>
+  </header>
+
+  <!-- Portfolio Content -->
+  <div class="container">
+    <h2>About Me</h2>
+    <p>I am Yashwanth, a BCA student with a passion for web development. 
+       I love learning new technologies and building creative projects using HTML and CSS. 
+       My aim is to grow as a developer while improving my problem-solving and collaboration skills.</p>
+    <img src="your-photo.jpg" alt="Yashwanth M">
+
+    <h2>Education</h2>
+    <table>
+      <tr>
+        <th>Degree</th>
+        <th>Institution</th>
+        <th>Year</th>
+        <th>CGPA</th>
+      </tr>
+      <tr>
+        <td>12th Grade</td>
+        <td>Vatsalaya Education Center</td>
+        <td>2022</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>BCA</td>
+        <td>Hindustan Institute of College</td>
+        <td>2022–2025</td>
+        <td>7.85</td>
+      </tr>
+    </table>
+
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Problem Solving</li>
+      <li>Team Collaboration</li>
+    </ul>
+
+    <h2>Projects</h2>
+    <h3>1. Personal Portfolio Website</h3>
+    <p>A responsive website showcasing my skills, education, and projects.</p>
+    <a href="https://github.com/yashwanth64th" target="_blank">View on GitHub</a>
+
+    <h3>2. Student Management Page</h3>
+    <p>A basic project displaying student details using HTML tables and lists.</p>
+    <a href="https://github.com/yashwanth64th" target="_blank">View on GitHub</a>
+
+    <h2>Contact Information</h2>
+    <p>Email: <a href="mailto:yashwanthsubha214@gmail.com">yashwanthsubha214@gmail.com</a></p>
+    <p>Phone: +91-9361393659</p>
+    <p>Address: Tamil Nadu, India</p>
+  </div>
+
+  <footer>
+    <p>©️ 2025 Yashwanth M | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Logout function
+    function logout() {
+      alert("You have been logged out!");
+      window.location.href = "login.html"; // redirect (create login.html later if needed)
+    }
+  </script>
+</body>
+</html>
