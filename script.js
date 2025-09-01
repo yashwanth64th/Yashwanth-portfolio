@@ -1,53 +1,54 @@
-let users = JSON.parse(localStorage.getItem("users")) || {};
-
+// Save users in localStorage (acts like a mini database in browser)
 function registerUser() {
-  const newUsername = document.getElementById("newUsername").value;
-  const newPassword = document.getElementById("newPassword").value;
-  const registerMessage = document.getElementById("registerMessage");
-  
-  if (newUsername in users) {
-    registerMessage.style.color = "red";
-    registerMessage.innerText = "Username already exists!";
-    return;
-  }
-  
-  users[newUsername] = newPassword;
-  localStorage.setItem("users", JSON.stringify(users));
-  registerMessage.style.color = "green";
-  registerMessage.innerText = "Registration successful! Redirecting to login...";
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 2000);
-}
+    const username = document.getElementById("newUsername").value.trim();
+    const password = document.getElementById("newPassword").value.trim();
+    const message = document.getElementById("registerMessage");
 
-function validateLogin() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const message = document.getElementById("message");
-  
-  if (users[username] && users[username] === password) {
-    localStorage.setItem("loggedInUser", username);
-    window.location.href = "profile.html";
-  } else {
-    message.style.color = "red";
-    message.innerText = "Invalid username or password!";
-  }
-}
-
-function logout() {
-  alert("You have been logged out!")
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "login.html";
-}
-
-window.onload = function() {
-  const loggedInUser = localStorage.getItem("loggedInUser");
-  if (loggedInUser) {
-    const profileUsername = document.getElementById("profileUsername");
-    if (profileUsername) {
-      profileUsername.innerText = loggedInUser;
+    if (username === "" || password === "") {
+        message.style.color = "red";
+        message.textContent = "All fields are required!";
+        return;
     }
-  } else if (window.location.pathname.includes("profile.html")) {
-    window.location.href = "login.html";
-  }
-};
+
+    // Check if user already exists
+    if (localStorage.getItem(username)) {
+        message.style.color = "red";
+        message.textContent = "User already exists. Try another username.";
+    } else {
+        localStorage.setItem(username, password);
+        message.style.color = "green";
+        message.textContent = "Registration successful! You can now login.";
+    }
+}
+
+// Validate login
+function validateLogin() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    const storedPassword = localStorage.getItem(username);
+
+    if (storedPassword === password) {
+        message.style.color = "green";
+        message.textContent = "Login successful! Redirecting...";
+
+        // Redirect to profile page
+        setTimeout(() => {
+            window.location.href = "profile.html";
+        }, 1000);
+    } else {
+        message.style.color = "red";
+        message.textContent = "Invalid username or password.";
+    }
+}
+
+// Show logged in user details on profile.html
+document.addEventListener("DOMContentLoaded", () => {
+    const profileHeader = document.querySelector("header h2");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (profileHeader && loggedInUser) {
+        profileHeader.textContent = loggedInUser;
+    }
+});
