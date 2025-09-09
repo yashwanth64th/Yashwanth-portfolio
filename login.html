@@ -63,6 +63,21 @@
     <p>Don’t have an account? <a href="register.html" style="color:#00ffcc;">Register</a></p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function validateLogin(event) {
+      event.preventDefault(); // stop form from refreshing page
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (username === "admin" && password === "1234") {
+        message.style.color = "lightgreen";
+        message.textContent = "Login successful!";
+      } else {
+        message.style.color = "red";
+        message.textContent = "Invalid username or password.";
+      }
+    }
+  </script>
 </body>
 </html>
