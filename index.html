@@ -2,102 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yashwanth's Portfolio</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      color: #222;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .intro {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 70vh;
-    }
-
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      max-width: 500px;
-    }
-
-    .card h1 {
-      margin-bottom: 10px;
-      color: #2c3e50;
-    }
-
-    .card p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 12px;
-      font-size: 0.9rem;
-    }
-  </style>
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h2>Create Account</h2>
+    <input type="text" id="regUser" placeholder="Choose a Username">
+    <small id="userError" class="error"></small>
 
-  <header>
-    <h2>Yashwanth's Portfolio</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html">Login</a>
-      <a href="https://github.com/" target="_blank">GitHub</a>
-    </nav>
-  </header>
+    <input type="password" id="regPass" placeholder="Choose a Password">
+    <small id="passError" class="error"></small>
 
-  <section class="intro">
-    <div class="card">
-      <h1>Hello, I'm Yashwanth 👋</h1>
-      <p>
-        Welcome to my personal portfolio website.  
-        I love building websites, learning new technologies,  
-        and exploring creative ideas in coding.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Yashwanth | Built with ❤️ and HTML
-  </footer>
-
+    <button onclick="registerUser()">Register</button>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
